@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .section-title {
+    @apply text-4xl lg:text-5xl font-bold mb-4 text-center;
+  }
+
+  .section-subtitle {
+    @apply text-lg lg:text-xl text-github-muted max-w-3xl mx-auto text-center;
+  }
+
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+  .glow-on-hover:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 64, 0.5));
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f0f6fc 0%, #0969da 35%, #ff0040 70%, #1f2937 100%);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+  }
+
+  .navy-accent {
+    @apply text-github-navy-light border-github-navy;
+  }
+
+  .interactive-card {
+    @apply transition-all duration-300 hover:shadow-2xl hover:scale-105;
+    background: linear-gradient(145deg, #161b22, #1f2937);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161b22;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff0040, #0969da);
+  border-radius: 6px;
+  border: 2px solid #161b22;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff1744, #1f2937);
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 0, 64, 0.3);
+  color: #f0f6fc;
+}
